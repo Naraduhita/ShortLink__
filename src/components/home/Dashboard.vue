@@ -10,9 +10,16 @@
           </svg>
           a.nak
         </a>
+        <button
+          class="btn btn-outline-success my-2 my-sm-0"
+          type="submit"
+          @click.prevent="logout"
+        >
+          Log out
+        </button>
       </nav>
       <div class="greeting">
-        <h1>Hi, Your Name!</h1>
+        <h1>Hi,anak!</h1>
       </div>
     </div>
     <!-- navbar -->
@@ -108,6 +115,7 @@ import {
   onSnapshot,
   updateDoc,
 } from "firebase/firestore";
+import { useRouter } from "vue-router";
 
 export default {
   name: 'Dashboard',
@@ -118,6 +126,15 @@ export default {
   }),
   props: {
     msg: String,
+  },
+
+  setup() {
+    const router = useRouter();
+    const logout = () => {
+      localStorage.setItem("authenticated", false);
+      router.push({ name: "Login" });
+    };
+    return { logout };
   },
 
   mounted() {
@@ -160,7 +177,6 @@ export default {
   }
 };
 </script>
-
 <style scoped>
 h1 {
   display: flex;

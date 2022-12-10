@@ -36,7 +36,7 @@
                 <div class="card-front">
                   <div class="center-wrap">
                     <div class="section text-center">
-                      <h4 class="mb-4 pb-3">Welcome User!</h4>
+                      <h4 class="mb-4 pb-3 text-black">Welcome User!</h4>
                       <div class="my-5">
                         <router-link to="/login" class="bg-blue-400 p-2 rounded-md text-black"
                           >Login</router-link
